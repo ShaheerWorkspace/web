@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHAHEER KV — Finance & Data Analytics</title>
+  <meta name="description" content="Portfolio of Shaheer KV, BCom graduate specializing in Finance, Accounting, and Data Analytics.">
+  <style>
+    /* ===== COLOR PALETTE ===== */
+    :root {
+      --primary: #004aad;
+      --accent: #00bfa6;
+      --light: #f9fafc;
+      --text: #1e293b;
+      --subtext: #64748b;
+      --card-bg: #ffffff;
+      --radius: 16px;
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--primary);
+    }
+
+    /* ===== HEADER / HERO ===== */
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      padding: 100px 20px 120px;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      width: 150%;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.1);
+      top: -40px;
+      left: -25%;
+      border-radius: 50%;
+      transform: rotate(-10deg);
+    }
+
+    header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      z-index: 2;
+      position: relative;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #dbeafe;
+      z-index: 2;
+      position: relative;
+    }
+
+    .social {
+      margin-top: 18px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .social a {
+      display: inline-block;
+      margin: 0 8px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 16px;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .social a:hover {
+      background: #fff;
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ===== WAVE GRAPHIC ===== */
+    .wave {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDE2MDAgODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMzBjNDAwIDgwIDgwMC0xMCAxMjAwIDBzNDAwIDgwIDQwMCA4MHY1MEgwVjMweiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjYiLz48L3N2Zz4=');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 1000px;
+      margin: -60px auto 60px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 3;
+    }
+
+    section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 40px 35px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+      font-size: 22px;
+      color: var(--primary);
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--subtext);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .skill {
+      background: linear-gradient(135deg, #e0f2fe, #ccfbf1);
+      color: var(--text);
+      text-align: center;
+      font-weight: 500;
+      padding: 12px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .skill:hover {
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ===== ITEMS ===== */
+    .item {
+      margin-bottom: 20px;
+    }
+
+    .item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .item em {
+      color: var(--subtext);
+      font-size: 14px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: var(--subtext);
+      padding: 30px 10px 50px;
+      background: #fff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    footer strong {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 32px; }
+      section { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SHAHEER KV</h1>
+    <p>BCom Graduate • Finance & Data Analytics</p>
+    <div class="social">
+      <a href="mailto:shaheerkeveez@gmail.com">Email</a>
+      <a href="https://wa.me/919846897673" target="_blank">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/shaheerkv" target="_blank">LinkedIn</a>
+    </div>
+    <div class="wave"></div>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        BCom Finance Graduate and Data Analytics professional with expertise in Excel, Power BI, and Tally. 
+        Committed to continuous learning and development, and focused on contributing effectively 
+        to finance and business operations.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Key Skills</h2>
+      <div class="skills">
+        <div class="skill">Accounting</div>
+        <div class="skill">Tally / ERP</div>
+        <div class="skill">VAT / Gulf VAT</div>
+        <div class="skill">Excel (Advanced)</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Data Visualization</div>
+        <div class="skill">Financial Reporting</div>
+        <div class="skill">Analytical Thinking</div>
+        <div class="skill">Business Intelligence</div>
+        <div class="skill">Communication</div>
+        <div class="skill">Time Management</div>
+        <div class="skill">Problem Solving</div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience & Projects</h2>
+      <div class="item">
+        <h3>Finance & Data Analytics Intern — SMEClabs</h3>
+        <em>Jun 2024 – Dec 2024 | Ernakulam</em>
+        <p>
+          Analyzed financial datasets using Python and Power BI, designed interactive dashboards 
+          for performance tracking, and automated repetitive reporting processes.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3>Accounting & Operations — Opal Glam Boutique</h3>
+        <em>Sep 2024 – Mar 2025 | Ernakulam</em>
+        <p>
+          Managed daily accounting tasks and inventory using Tally, assisted in VAT filing, 
+          and handled reconciliation and monthly financial reports.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3>Ongoing Projects</h3>
+        <p>
+          Developing finance dashboards and automation tools integrating analytics and reporting — to be published soon on GitHub.
+        </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education & Certifications</h2>
+      <div class="item">
+
+    <div class="certificate-item">
+      <h3>Bachelor of Commerce (Finance)</h3>
+      <p><strong>Institution:</strong> Aspire College of Advanced Studies, University of Calicut</p>
+      <p><strong>Year:</strong> 2021 – 2024</p>
+      <p>Completed BCom with a focus on accounting, taxation, and financial management.</p>
+    </div>
+
+    <div class="certificate-item">
+      <h3>Diploma in Master of Data Analytics</h3>
+      <p><strong>Institution:</strong> SMEClabs, Ernakulam</p>
+      <p><strong>Year:</strong> 2024</p>
+      <p>Hands-on training in Excel, Power BI, and Python for data analysis and reporting.</p>
+    </div>
+
+    <div class="certificate-item">
+      <h3>Tally Prime + GST + Gulf VAT</h3>
+      <p><strong>Institution:</strong> ICS-India Group of Institutions</p>
+      <p><strong>Year:</strong> 2025</p>
+      <p>Completed professional training in accounting software, GST filing, and Gulf VAT compliance.</p>
+    </div>
+
+    <div class="certificate-item">
+      <h3>1 Million Prompters — AI Prompt Engineering</h3>
+      <p><strong>Year:</strong> 2024</p>
+      <p>Certified in effective AI prompting techniques and automation-assisted problem-solving.</p>
+    </div>
+
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 <strong>SHAHEER KV</strong> — Finance & Data Analytics<br>
+    Based in Palakkad, Kerala
+  </footer>
+</body>
+</html>
